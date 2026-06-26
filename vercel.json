@@ -1,7 +1,11 @@
 {
-  "buildCommand": "pip install -r requirements.txt",
-  "outputDirectory": ".",
+  "functions": {
+    "api/webhook.py": {
+      "memory": 256,
+      "maxDuration": 10
+    }
+  },
   "rewrites": [
-    { "source": "/webhook", "destination": "/api/webhook.py" }
+    { "source": "/webhook", "destination": "/api/webhook" }
   ]
 }
