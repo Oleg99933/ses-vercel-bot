@@ -1,14 +1,13 @@
-import os
+import os, telebot, requests, feedparser, time
 from flask import Flask, request
-import telebot
 from groq import Groq
 from datetime import datetime
-import requests
-import feedparser
 
 app = Flask(__name__)
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 GROQ_KEY = os.getenv("GROQ_API_KEY")
+if not TOKEN or not GROQ_KEY:
+    raise Exception("Missing TELEGRAM_BOT_TOKEN or GROQ_API_KEY environment variables")
 bot = telebot.TeleBot(TOKEN)
 groq_client = Groq(api_key=GROQ_KEY)
 
