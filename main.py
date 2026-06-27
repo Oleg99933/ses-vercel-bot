@@ -205,8 +205,10 @@ def ask_cmd(message):
         bot.reply_to(message, ask_ai(q))
 
 if __name__ == '__main__':
+    bot.remove_webhook()
     while True:
         try:
-            bot.polling()
+            bot.polling(none_stop=True)
         except:
             time.sleep(5)
+
