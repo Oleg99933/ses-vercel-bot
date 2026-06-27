@@ -2,7 +2,7 @@ import os, telebot, requests, feedparser, time, json, threading
 from groq import Groq
 from datetime import datetime
 
-TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
+TOKEN = os.environ["TELEGRAM_BOT_TOKEN_NEW"]
 GROQ_KEY = os.environ["GROQ_API_KEY"]
 bot = telebot.TeleBot(TOKEN)
 groq_client = Groq(api_key=GROQ_KEY)
